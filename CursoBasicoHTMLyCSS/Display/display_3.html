@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            width: 400px;
+            height: 400px;
+            background-color: papayawhip;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+        }
+        .item{
+            background-color: peru;
+        }
+        .container .item:nth-child(1){
+            background: darkblue;
+            grid-column: 1 / 2;
+        }
+        .container .item:nth-child(2){
+            background: darkcyan;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        .container .item:nth-child(3){
+            background: darkgoldenrod;
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+        .container .item:nth-child(4){
+            background: darkgray;
+            grid-column: 4 / 5;
+            grid-row: 4 / 5;
+        }
+        .container .item:nth-child(5){
+            background: darkmagenta;
+            grid-column: 5 / 6;
+            grid-row: 5 / 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

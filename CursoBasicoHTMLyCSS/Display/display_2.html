@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            background: rgb(28, 186, 102);
+            height: 600px;
+
+            /* centramos los divs del containar */
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+
+        }
+        .item{
+            width: 30px;
+            height: 30px;
+            background: violet;
+        }
+        .container .item:nth-child(2n + 1){
+            background: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class ="container">
+        <div class ="item">h</div>
+        <div class ="item">o</div>
+        <div class ="item">l</div>
+        <div class ="item">a</div>
+        <div class ="item">!</div>
+    </div>
+</body>
+</html>
