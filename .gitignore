@@ -1,2 +1,6 @@
 ArchivosDeDiseño.md
 .vscode
+.idea/.gitignore
+.idea/HTML&CSS.iml
+.idea/modules.xml
+.idea/vcs.xml
