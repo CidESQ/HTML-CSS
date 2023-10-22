@@ -72,9 +72,26 @@ productList.push({
     price: '130',
     image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
 });
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
 /* ˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆ */
 
-
+function renderProducts(arr){
 /* ˆˆˆˆ HTML QUE VAMOS A HACER DINAMICO ˆˆˆˆˆˆˆ */
 // <div className="product-card">
 //     <img src="https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -85,52 +102,53 @@ productList.push({
 //             <p>Diamond ring</p>
 //         </div>
 //         <figure>
-//             <img src="./icons/bt_add_to_cart.svg" alt="">
+//             <img src="./icons/bt_add_to_cart.svg" alt="" class="imagen-carrito">
 //         </figure>
 //     </div>
 // </div>
+    for (producto of arr) {
 
-for (producto of productList) {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
 
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+        const img = document.createElement('img');
+        img.setAttribute('src', producto.image);
+        // product = {name, price, image} -> product.image
 
-    const img = document.createElement('img');
-    img.setAttribute('src', producto.image);
-    // product = {name, price, image} -> product.image
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
 
-    const productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
+        const productInfoDiv = document.createElement('div');
 
-    const productInfoDiv = document.createElement('div');
+        const productPrice = document.createElement('p');
+        productPrice.innerText = '$' + producto.price;
 
-    const productPrice = document.createElement('p');
-    productPrice.innerText = '$' + producto.price;
+        const productName = document.createElement('p');
+        productName.innerText = producto.name;
 
-    const productName = document.createElement('p');
-    productName.innerText = producto.name;
+        const productInfoFigure = document.createElement('figure');
 
-    const productInfoFigure = document.createElement('figure');
+        const imgProductCard = document.createElement('img');
+        imgProductCard.setAttribute('src', './icons/bt_add_to_cart.svg');
 
-    const imgProductCard = document.createElement('img');
-    imgProductCard.setAttribute('src', './icons/bt_add_to_cart.svg');
+        /*
+        * metiendo los compententes en los otros para hacer que se parezca a la estructura del html
+        * se tiene que realizar de atras para adelante y de adentro hacia afuera
+        */
 
+        productInfoFigure.appendChild(imgProductCard);
+        productInfoDiv.appendChild(productPrice);
+        productInfoDiv.appendChild(productName);
 
-    /*
-    * metiendo los compententes en los otros para hacer que se parezca a la estructura del html
-    * se tiene que realizar de atras para adelante y de adentro hacia afuera
-    */
+        productInfo.appendChild(productInfoDiv);
+        productInfo.appendChild(productInfoFigure);
 
-    productInfoFigure.appendChild(imgProductCard);
-    productInfoDiv.appendChild(productPrice);
-    productInfoDiv.appendChild(productName);
+        productCard.appendChild(img);
+        productCard.appendChild(productInfo);
 
-    productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productInfoFigure);
-
-    productCard.appendChild(img);
-    productCard.appendChild(productInfo);
-
-    // Agregando al html el product card
-    cardsContainer.appendChild(productCard);
+        // Agregando al html el product card
+        cardsContainer.appendChild(productCard);
+    }
 }
+
+renderProducts(productList);
