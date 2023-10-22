@@ -7,6 +7,8 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const shoppingCartIcon = document.querySelector('.navbar-shopping-cart');
 const shoppingCartMenu = document.querySelector('.product-detail');
 
+const cardsContainer = document.querySelector('.cards-container');
+
 // ------------------------------------- FUNCIONES------------------
 menuEmail.addEventListener('click', toggleDesktopMenu);
 shoppingCartIcon.addEventListener('click', toggleShoppingCart);
@@ -49,6 +51,10 @@ function toggleShoppingCart() {
 
 const productList = [];
 
+/*
+* ESTE CODIGO EN TEORIA DEBERIA DE VENIR DE UNA BASE DE DATOS
+* Productos:
+*/
 productList.push({
     name: 'Ring',
     price: '120',
@@ -66,7 +72,10 @@ productList.push({
     price: '130',
     image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
 });
+/* ˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆ */
 
+
+/* ˆˆˆˆ HTML QUE VAMOS A HACER DINAMICO ˆˆˆˆˆˆˆ */
 // <div className="product-card">
 //     <img src="https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 //          alt="">
@@ -84,14 +93,14 @@ productList.push({
 for (producto of productList) {
 
     const productCard = document.createElement('div');
-    productCard.classList.add('product-info');
+    productCard.classList.add('product-card');
 
     const img = document.createElement('img');
     img.setAttribute('src', producto.image);
     // product = {name, price, image} -> product.image
 
     const productInfo = document.createElement('div');
-    image.classList.add('product-info');
+    productInfo.classList.add('product-info');
 
     const productInfoDiv = document.createElement('div');
 
@@ -104,7 +113,7 @@ for (producto of productList) {
     const productInfoFigure = document.createElement('figure');
 
     const imgProductCard = document.createElement('img');
-    imgProductCard.setAttribute('src', './icons/bt_add_tocart.svg');
+    imgProductCard.setAttribute('src', './icons/bt_add_to_cart.svg');
 
 
     /*
@@ -121,4 +130,7 @@ for (producto of productList) {
 
     productCard.appendChild(img);
     productCard.appendChild(productInfo);
+
+    // Agregando al html el product card
+    cardsContainer.appendChild(productCard);
 }
