@@ -5,20 +5,25 @@ const menuHam = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 const shoppingCartIcon = document.querySelector('.navbar-shopping-cart');
-const shoppingCartMenu = document.querySelector('.product-detail');
+const shoppingCartMenu = document.querySelector('#shopping-cart-container');
 
 const cardsContainer = document.querySelector('.cards-container');
+
+const productDetailContainer = document.querySelector('#product-detail')
+const productDetailClose = document.querySelector('.product-detail-close');
+
 
 // ------------------------------------- FUNCIONES------------------
 menuEmail.addEventListener('click', toggleDesktopMenu);
 shoppingCartIcon.addEventListener('click', toggleShoppingCart);
 menuHam.addEventListener('click', toggleMenuHam);
+productDetailClose.addEventListener('click', closeProductDetail);
 
 function toggleDesktopMenu() {
 
     const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
 
-    if (isShoppingCartOpen) {
+    if (isShoppingCartOpen ) {
         shoppingCartMenu.classList.add('onScreen');
     }
 
@@ -41,7 +46,7 @@ function toggleShoppingCart() {
     const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
     const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
 
-    if (isMobileMenuOpen || isDesktopMenuOpen) {
+    if (isMobileMenuOpen || isDesktopMenuOpen ) {
         mobileMenu.classList.add('onScreen');
         desktopMenu.classList.add('onScreen');
     }
@@ -49,24 +54,38 @@ function toggleShoppingCart() {
     shoppingCartMenu.classList.toggle('onScreen');
 }
 
-const productList = [];
+function openProductDetail(){
+    const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
+    const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
+    const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
+
+    if (isMobileMenuOpen || isDesktopMenuOpen || isShoppingCartOpen) {
+        mobileMenu.classList.add('onScreen');
+        desktopMenu.classList.add('onScreen');
+        shoppingCartMenu.classList.add('onScreen');
+    }
+    productDetailContainer.classList.remove('onScreen');
+}
+
+function closeProductDetail(){
+    productDetailContainer.classList.add('onScreen');
+}
 
 /*
 * ESTE CODIGO EN TEORIA DEBERIA DE VENIR DE UNA BASE DE DATOS
 * Productos:
 */
+const productList = [];
 productList.push({
     name: 'Ring',
     price: '120',
     image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 });
-
 productList.push({
     name: 'Bike',
     price: '100',
     image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
-
 productList.push({
     name: 'Computador',
     price: '130',
@@ -77,13 +96,11 @@ productList.push({
     price: '120',
     image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 });
-
 productList.push({
     name: 'Bike',
     price: '100',
     image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
-
 productList.push({
     name: 'Computador',
     price: '130',
@@ -111,9 +128,10 @@ function renderProducts(arr){
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
-        const img = document.createElement('img');
-        img.setAttribute('src', producto.image);
         // product = {name, price, image} -> product.image
+        const productImage = document.createElement('img');
+        productImage.setAttribute('src', producto.image);
+        productImage.addEventListener('click', openProductDetail);
 
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
@@ -143,12 +161,11 @@ function renderProducts(arr){
         productInfo.appendChild(productInfoDiv);
         productInfo.appendChild(productInfoFigure);
 
-        productCard.appendChild(img);
+        productCard.appendChild(productImage);
         productCard.appendChild(productInfo);
 
         // Agregando al html el product card
         cardsContainer.appendChild(productCard);
     }
 }
-
 renderProducts(productList);
