@@ -20,7 +20,8 @@ menuHam.addEventListener('click', toggleMenuHam);
 productDetailClose.addEventListener('click', closeProductDetail);
 
 function toggleDesktopMenu() {
-    mobileMenu.classList.add('onScreen');
+    shoppingCartMenu.classList.add('onScreen');
+    productDetailContainer.classList.add('onScreen');
     desktopMenu.classList.toggle('onScreen');
     // const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
     //
@@ -32,6 +33,7 @@ function toggleDesktopMenu() {
 }
 function toggleMenuHam() {
     shoppingCartMenu.classList.add('onScreen');
+    productDetailContainer.classList.add('onScreen');
     mobileMenu.classList.toggle('onScreen');
     // const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
     //
@@ -42,8 +44,9 @@ function toggleMenuHam() {
     // mobileMenu.classList.toggle('onScreen');
 }
 function toggleShoppingCart() {
-    mobileMenu.add('onScreen');
+    mobileMenu.classList.add('onScreen');
     desktopMenu.classList.add('onScreen');
+    productDetailContainer.classList.add('onScreen');
     shoppingCartMenu.classList.toggle('onScreen');
     // const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
     // const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
@@ -81,6 +84,96 @@ function closeProductDetail(){
 * Productos:
 */
 const productList = [];
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
+productList.push({
+    name: 'Ring',
+    price: '120',
+    image: 'https://images.pexels.com/photos/10475789/pexels-photo-10475789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+});
+productList.push({
+    name: 'Bike',
+    price: '100',
+    image: 'https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+productList.push({
+    name: 'Computador',
+    price: '130',
+    image: 'https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=1200',
+});
 productList.push({
     name: 'Ring',
     price: '120',
