@@ -20,55 +20,60 @@ menuHam.addEventListener('click', toggleMenuHam);
 productDetailClose.addEventListener('click', closeProductDetail);
 
 function toggleDesktopMenu() {
-
-    const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
-
-    if (isShoppingCartOpen ) {
-        shoppingCartMenu.classList.add('onScreen');
-    }
-
+    mobileMenu.classList.add('onScreen');
     desktopMenu.classList.toggle('onScreen');
+    // const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
+    //
+    // if (isShoppingCartOpen ) {
+    //     shoppingCartMenu.classList.add('onScreen');
+    // }
+    //
+    // desktopMenu.classList.toggle('onScreen');
 }
-
 function toggleMenuHam() {
-
-    const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
-
-    if (isShoppingCartOpen) {
-        shoppingCartMenu.classList.add('onScreen');
-    }
-
+    shoppingCartMenu.classList.add('onScreen');
     mobileMenu.classList.toggle('onScreen');
+    // const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
+    //
+    // if (isShoppingCartOpen) {
+    //     shoppingCartMenu.classList.add('onScreen');
+    // }
+    //
+    // mobileMenu.classList.toggle('onScreen');
 }
-
 function toggleShoppingCart() {
-
-    const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
-    const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
-
-    if (isMobileMenuOpen || isDesktopMenuOpen ) {
-        mobileMenu.classList.add('onScreen');
-        desktopMenu.classList.add('onScreen');
-    }
-
+    mobileMenu.add('onScreen');
+    desktopMenu.classList.add('onScreen');
     shoppingCartMenu.classList.toggle('onScreen');
+    // const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
+    // const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
+    //
+    // if (isMobileMenuOpen || isDesktopMenuOpen ) {
+    //     mobileMenu.classList.add('onScreen');
+    //     desktopMenu.classList.add('onScreen');
+    // }
+    //
+    // shoppingCartMenu.classList.toggle('onScreen');
 }
-
 function openProductDetail(){
-    const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
-    const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
-    const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
-
-    if (isMobileMenuOpen || isDesktopMenuOpen || isShoppingCartOpen) {
-        mobileMenu.classList.add('onScreen');
-        desktopMenu.classList.add('onScreen');
-        shoppingCartMenu.classList.add('onScreen');
-    }
+    mobileMenu.classList.add('onScreen');
+    desktopMenu.classList.add('onScreen');
+    shoppingCartMenu.classList.add('onScreen');
     productDetailContainer.classList.remove('onScreen');
+    // const isMobileMenuOpen = !mobileMenu.classList.contains('onScreen');
+    // const isDesktopMenuOpen = !desktopMenu.classList.contains('onScreen');
+    // const isShoppingCartOpen = !shoppingCartMenu.classList.contains('onScreen');
+    //
+    // if (isMobileMenuOpen || isDesktopMenuOpen || isShoppingCartOpen) {
+    //     mobileMenu.classList.add('onScreen');
+    //     desktopMenu.classList.add('onScreen');
+    //     shoppingCartMenu.classList.add('onScreen');
+    // }
+    // productDetailContainer.classList.remove('onScreen');
 }
-
 function closeProductDetail(){
     productDetailContainer.classList.add('onScreen');
+    // productDetailContainer.classList.add('onScreen');
 }
 
 /*
