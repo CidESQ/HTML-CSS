@@ -76,7 +76,6 @@ function openProductDetail(){
 }
 function closeProductDetail(){
     productDetailContainer.classList.add('onScreen');
-    // productDetailContainer.classList.add('onScreen');
 }
 
 /*
